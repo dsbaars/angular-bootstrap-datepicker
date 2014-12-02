@@ -20,8 +20,11 @@ dp.directive 'ngDatepicker', ->
       language = scope.ngOptions.language || defaultLanguage
 
       scope.$apply ->
-        #e.date.setDate e.date.getDate() + 1
-        scope.ngModel = $.fn.datepicker.DPGlobal.formatDate(e.date, format, language)
+        e.date.setDate e.date.getDate() + 1
+        scope.ngModel = $.fn.datepicker.DPGlobal.formatDate(
+          e.date,
+          format,
+          language)
     )
 
     element.find('input').on('focus', ->

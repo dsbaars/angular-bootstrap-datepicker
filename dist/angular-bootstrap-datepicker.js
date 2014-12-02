@@ -2511,6 +2511,7 @@ dp.directive('ngDatepicker', function() {
         defaultLanguage = $.fn.datepicker.defaults.language;
         language = scope.ngOptions.language || defaultLanguage;
         return scope.$apply(function() {
+          e.date.setDate(e.date.getDate() + 1);
           return scope.ngModel = $.fn.datepicker.DPGlobal.formatDate(e.date, format, language);
         });
       });
