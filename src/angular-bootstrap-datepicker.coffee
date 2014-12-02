@@ -20,7 +20,7 @@ dp.directive 'ngDatepicker', ->
       language = scope.ngOptions.language || defaultLanguage
 
       scope.$apply ->
-        e.date.setDate e.date.getDate() + 1
+        e.date.setUTCDates e.date.getUTCDates() + 1
         scope.ngModel = $.fn.datepicker.DPGlobal.formatDate(
           e.date,
           format,
